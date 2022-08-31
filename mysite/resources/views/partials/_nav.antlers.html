@@ -1,0 +1,33 @@
+<nav
+class="sticky top-0 z-10 flex items-center justify-between h-24 px-6 bg-slate-900 md:px-10"
+x-data="{navbarOpen: false}"
+>
+    <a class="shrink-0" href="/"
+        ><img src="/assets/Logo.svg" alt="logo" class="h-32"
+    /></a>
+    <div class="block md:hidden">
+        <button class="flex items-center px-3 py-2" x-bind:class="{'hidden': navbarOpen}" @click="navbarOpen = true">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Open Menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+        </button>
+        <button class="flex items-center px-3 py-2" x-bind:class="{'flex': navbarOpen, 'hidden': ! navbarOpen}" @click="navbarOpen = false" x-cloak>
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Close Menu</title>
+                <path
+                    d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
+            </svg>
+        </button>
+    </div>
+    <ul
+        class="fixed left-0 right-0 min-h-screen p-4 space-y-4 tracking-widest uppercase transition duration-200 transform translate-x-full top-24 bg-slate-900 md:relative md:flex md:min-h-0 md:top-0 md:space-y-0 md:translate-x-0 md:space-x-10"
+        :class="{'translate-x-full': !navbarOpen, 'translate-x-0': navbarOpen}"
+    >
+    {{ nav:main_nav include_home="true" }}
+        <li class="hover:underline hover:decoration-fuchsia-700 underline-offset-4 decoration-4">
+            <a href="{{ url }}" {{ if is_current }} class="underline decoration-fuchsia-700 underline-offset-4 decoration-4"{{ /if }}>{{ title }}</a>
+        </li>
+    {{ /nav:main_nav }}
+    </ul>
+</nav>

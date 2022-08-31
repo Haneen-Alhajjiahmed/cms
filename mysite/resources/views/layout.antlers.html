@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{ title ?? site:name }}</title>
+        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}" />
+        <meta
+            name="description"
+            content="Author: M Y site, Category: Programming books"
+        />
+        <script
+            defer
+            src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+        ></script>
+    </head>
+    <body class="flex flex-col min-h-screen font-arial text-fuchsia-50">
+        {{ partial:partials/nav }}
+
+        <main
+            class="relative grow bg-gradient-to-b from-slate-600 to-slate-700"
+        >
+            {{ template_content }}
+        </main>
+
+        <script src="{{ mix src='/js/site.js' }}"></script>
+    </body>
+</html>

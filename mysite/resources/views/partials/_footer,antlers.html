@@ -1,0 +1,42 @@
+<footer>
+    <div class="px-10 py-5 bg-slate-900 h-28">
+        <ul class="flex mb-3 space-x-5">
+            <li>
+                <a href="{{ author:youtube_url }}">
+                    {{ author:youtube_logo }}
+                    <img
+                        src="{{ url }}"
+                        alt="{{ author:youtube_logo:alt }}"
+                        class="w-10"
+                    />
+                    {{ /author:youtube_logo}}
+                </a>
+            </li>
+            <li>
+                <a href="{{ author:instagram_url }}">
+                    {{ author:instagram_logo }}
+                    <img
+                        src="{{ url }}"
+                        alt="{{ author:instagram_logo:alt }}"
+                        class="w-10"
+                    />
+                    {{ /author:instagram_logo}}
+                </a>
+            </li>
+            <li>
+                <a href="{{ author:twitter_url }}">
+                    {{ author:twitter_logo }}
+                    <img
+                        src="{{ url }}"
+                        alt="{{ author:twitter_logo:alt }}"
+                        class="w-10"
+                    />
+                    {{ /author:twitter_logo}}
+                </a>
+            </li>
+        </ul>
+        <p class="text-sm text-gray-300">
+            &copy; 2022 Website. All rights reserved.
+        </p>
+    </div>
+</footer>

@@ -1,0 +1,9 @@
+title: Books
+template: books/show
+layout: layout
+revisions: false
+route: '/books/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

@@ -1,0 +1,13 @@
+<div class="p-5 mx-auto md:max-w-6xl md:p-12">
+    <div class="grid gap-4 md:grid-cols-2 md:grid-rows-[auto,1fr]">
+        <h1 class="font-serif text-5xl text-center md:text-left">{{ title }}</h1>
+        <img src="{{ image }}" alt="{{ image:alt }}" class="object-contain max-w-xs mx-auto md:row-span-2 md:max-w-sm md:mr-5 md:my-auto">
+        <div class="my-8">
+            {{ content }}
+        </div>
+    </div>
+</div>
+
+{{ if related_review }}
+    {{ partial:partials/related_reviews }}
+{{ /if }}

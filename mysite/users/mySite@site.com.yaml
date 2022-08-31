@@ -1,0 +1,14 @@
+name: my-site
+super: true
+id: 8a5e9c64-e144-4469-8f86-08d23eb095ea
+password_hash: $2y$10$wrZRdoAW6VsKPK7lPkPpHeRBHKOuQoBVgHcYofq3KXmjgPOkfMAdW
+preferences:
+  collections:
+    reviews:
+      columns:
+        - title
+        - reviewed_book
+    books:
+      columns:
+        - title
+        - related_review

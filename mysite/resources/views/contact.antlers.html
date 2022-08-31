@@ -1,0 +1,103 @@
+<div class="mx-auto md:max-w-5xl md:py-24">
+    <div
+        class="items-center justify-between mt-10 md:flex md:mt-0 md:space-x-16 lg:space-x-28 md:mx-5 lg:mx-0"
+    >
+        <div class="flex flex-col md:block">
+            <h1
+                class="order-2 mt-5 font-serif text-5xl text-center md:text-7xl md:order-1"
+            >
+                {{ title }}
+            </h1>
+            <div class="order-3 my-5 text-center md:order-2">{{ content }}</div>
+            <img
+                src="/assets/email.svg"
+                alt="Envelope"
+                class="order-1 mx-auto w-52 md:w-96 md:order-3"
+            />
+        </div>
+
+        <div class="p-4 rounded-md bg-slate-500 md:p-6 lg:p-12">
+            {{ form:contact }}
+            <div class="space-y-5">
+                {{ if success }} {{ redirect to="/success" }} {{ elseif errors
+                }}
+                <div class="p-3 text-white bg-red-700 rounded-md">
+                    {{ errors }} {{ value }}<br />
+                    {{ /errors }}
+                </div>
+                {{ /if }}
+
+                <div
+                    class="justify-between space-y-5 md:flex md:space-x-5 md:space-y-0"
+                >
+                    <div class="flex flex-col">
+                        <label for="first-name">First Name&#42;</label>
+                        <input
+                            type="text"
+                            name="first-name"
+                            id="first-name"
+                            value="{{ old:first-name }}"
+                            autocomplete="given-name"
+                            class="mt-1 text-black rounded-md bg-slate-300 h-14"
+                            required
+                        />
+                    </div>
+
+                    <div class="flex flex-col">
+                        <label for="last-name">Last Name&#42;</label>
+                        <input
+                            type="text"
+                            name="last-name"
+                            id="last-name"
+                            value="{{ old:last-name }}"
+                            autocomplete="given-name"
+                            class="mt-1 text-black rounded-md bg-slate-300 h-14"
+                            required
+                        />
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="email">Email&#42;</label>
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        value="{{ old:email }}"
+                        autocomplete="given-name"
+                        class="mt-1 text-black rounded-md bg-slate-300 h-14"
+                        required
+                    />
+                </div>
+
+                <div class="flex flex-col">
+                    <label for="content">Message&#42;</label>
+                    <textarea
+                        name="content"
+                        id="content"
+                        cols="30"
+                        rows="10"
+                        class="mt-1 text-black rounded-md bg-slate-300"
+                    >
+{{ old:content }}</textarea
+                    >
+                </div>
+
+                <!-- spam prevention -->
+                <input
+                    type="text"
+                    class="hidden"
+                    name="{{ honeypot ?? 'honeypot' }}"
+                />
+
+                <button
+                    class="block px-5 py-3 mx-auto my-10 text-lg rounded-md bg-fuchsia-600 hover:bg-fuchsia-700"
+                >
+                    Send Message
+                </button>
+            </div>
+
+            {{ /form:contact }}
+        </div>
+    </div>
+</div>
